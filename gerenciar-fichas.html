@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Fichas - Other Side</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciar Fichas - Other Side</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="criar-ficha.html">Criar Ficha</a></li>
+                <li><a href="sobre.html">Sobre o RPG</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="character-list">
+            <h2>Lista de Fichas</h2>
+            <div id="characters">
+                <!-- As fichas salvas serão exibidas aqui -->
+            </div>
+        </section>
+
+        <section id="character-details" style="display: none;">
+            <h2>Detalhes da Ficha</h2>
+            <div id="character-info">
+                <!-- Os detalhes da ficha selecionada serão exibidos aqui -->
+            </div>
+            <button id="edit-button">Editar</button>
+            <button id="delete-button">Excluir</button>
+            <button id="back-button">Voltar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Other Side RPG. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

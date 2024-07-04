@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Ficha - Other Side</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Criação de Ficha - Other Side</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="gerenciar-fichas.html">Gerenciar Fichas</a></li>
+                <li><a href="sobre.html">Sobre o RPG</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="character-form">
+            <section id="basic-info">
+                <h2>Informações Básicas</h2>
+                <label for="name">Nome do Personagem:</label>
+                <input type="text" id="name" name="name" required placeholder="Digite o nome do personagem">
+
+                <label for="class">Classe:</label>
+                <select id="class" name="class" required>
+                    <option value="">Selecione a Classe</option>
+                    <option value="atleta">Atleta</option>
+                    <option value="nerd">Nerd</option>
+                    <option value="popular">Popular</option>
+                    <option value="artista">Artista</option>
+                    <option value="explorador">Explorador</option>
+                    <option value="medico">Médico da Campanha</option>
+                    <option value="caçador">Caçador de Sombras</option>
+                </select>
+
+                <label for="origin">Origem:</label>
+                <select id="origin" name="origin" required>
+                    <option value="">Selecione a Origem</option>
+                    <option value="estudante-ciencias">Estudante de Ciências</option>
+                    <option value="atleta-escolar">Atleta Escolar</option>
+                    <option value="membro-clube-debate">Membro de Clube de Debate</option>
+                    <option value="desenvolvedor-jogos">Desenvolvedor de Jogos</option>
+                    <option value="jovem-investigador">Jovem Investigador</option>
+                    <option value="criador-conteudo">Criador de Conteúdo</option>
+                </select>
+
+                <label for="birthdate">Data de Nascimento:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+
+                <label for="age">Idade:</label>
+                <input type="number" id="age" name="age" min="1" required>
+
+                <label for="sex">Sexo:</label>
+                <select id="sex" name="sex" required>
+                    <option value="">Selecione o Sexo</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+
+                <label for="height">Altura:</label>
+                <input type="text" id="height" name="height">
+
+                <label for="weight">Peso:</label>
+                <input type="text" id="weight" name="weight">
+
+                <label for="description">Descrição Física:</label>
+                <textarea id="description" name="description"></textarea>
+            </section>
+
+            <section id="attributes">
+                <h2>Atributos</h2>
+                <label for="strength">Força:</label>
+                <input type="number" id="strength" name="strength" min="1" max="3" value="1">
+
+                <label for="dexterity">Destreza:</label>
+                <input type="number" id="dexterity" name="dexterity" min="1" max="3" value="1">
+
+                <label for="perception">Percepção:</label>
+                <input type="number" id="perception" name="perception" min="1" max="3" value="1">
+
+                <label for="intelligence">Inteligência:</label>
+                <input type="number" id="intelligence" name="intelligence" min="1" max="3" value="1">
+
+                <label for="charisma">Lábia:</label>
+                <input type="number" id="charisma" name="charisma" min="1" max="3" value="1">
+
+                <label for="constitution">Constituição:</label>
+                <input type="number" id="constitution" name="constitution" min="1" max="3" value="1">
+
+                <label for="resistance">Resistência:</label>
+                <input type="number" id="resistance" name="resistance" min="1" max="3" value="1">
+            </section>
+
+            <section id="skills">
+                <h2>Perícias</h2>
+                <div id="skills-list">
+                    <!-- Perícias obrigatórias e opcionais serão adicionadas aqui dinamicamente -->
+                </div>
+            </section>
+
+            <section id="inventory">
+                <h2>Inventário</h2>
+                <div id="inventory-items">
+                    <!-- Itens do inventário serão adicionados aqui -->
+                </div>
+                <label for="item-name">Nome do Item:</label>
+                <input type="text" id="item-name" name="item-name" placeholder="Nome do item">
+
+                <label for="item-type">Tipo:</label>
+                <input type="text" id="item-type" name="item-type" placeholder="Tipo do item">
+
+                <label for="item-weight">Peso:</label>
+                <input type="number" id="item-weight" name="item-weight" placeholder="Peso do item">
+
+                <label for="item-quantity">Quantidade:</label>
+                <input type="number" id="item-quantity" name="item-quantity" placeholder="Quantidade do item">
+
+                <button type="button" onclick="addItem()">Adicionar Item</button>
+            </section>
+
+            <section id="experience">
+                <h2>Pontos de Experiência</h2>
+                <label for="xp-initial">XP Inicial:</label>
+                <input type="number" id="xp-initial" name="xp-initial" value="0">
+
+                <label for="xp-total">XP Total:</label>
+                <input type="number" id="xp-total" name="xp-total" value="0">
+
+                <label for="level">Nível Atual:</label>
+                <input type="number" id="level" name="level" value="1" readonly>
+
+                <label for="xp-next">XP para o Próximo Nível:</label>
+                <input type="number" id="xp-next" name="xp-next" value="100">
+            </section>
+
+            <section id="special-skills">
+                <h2>Habilidades Especiais</h2>
+                <textarea id="special-skills-description" name="special-skills-description"></textarea>
+            </section>
+
+            <button type="submit">Salvar Ficha</button>
+            <button type="button" onclick="window.location.href='index.html'">Cancelar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Other Side RPG. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
